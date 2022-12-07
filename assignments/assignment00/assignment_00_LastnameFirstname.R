@@ -1,6 +1,6 @@
 # Assignment: ASSIGNMENT 0
-# Name: Lastname, Firstname
-# Date: 2010-02-14
+# Name: Miranda, Alejandro
+# Date: 2022-12-11
 
 # Basics
 
