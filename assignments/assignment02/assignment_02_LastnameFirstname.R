@@ -3,10 +3,10 @@
 # Date: 2010-02-14
 
 ## Check your current working directory using `getwd()`
-___
+getwd()
 
 ## List the contents of the working directory with the `dir()` function
-___
+dir()
 
 ## If the current directory does not contain the `data` directory, set the
 ## working directory to project root folder (the folder should contain the `data` directory
