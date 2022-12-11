@@ -1,6 +1,6 @@
 # Assignment: ASSIGNMENT 2
-# Name: Lastname, Firstname
-# Date: 2010-02-14
+# Name: Miranda, Alejandro
+# Date: 2022-12-11
 
 ## Check your current working directory using `getwd()`
 getwd()
@@ -35,7 +35,7 @@ library(readxl)
 
 ## Using the excel_sheets() function from the `readxl` package,
 ## list the worksheets from the file `data/G04ResultsDetail2004-11-02.xls`
-___
+excel_sheets("data/G04ResultsDetail2004-11-02.xls")
 
 ## Using the `read_excel` function, read the Voter Turnout sheet
 ## from the `data/G04ResultsDetail2004-11-02.xls`
@@ -43,8 +43,8 @@ ___
 ## The header is in the second row, so make sure to skip the first row
 ## Examine the structure of `voter_turnout_df1` using `str()`
 
-voter_turnout_df1 <- ___
-___
+voter_turnout_df1 <- read_excel("data/G04ResultsDetail2004-11-02.xls", sheet = "Voter Turnout", skip = 1)
+str(voter_turnout_df1)
 
 ## Using the `read_excel()` function, read the Voter Turnout sheet
 ## from `data/G04ResultsDetail2004-11-02.xls`
@@ -52,11 +52,21 @@ ___
 ## Use the names "ward_precint", "ballots_cast", "registered_voters", "voter_turnout"
 ## Assign the data to the `voter_turnout_df2`
 ## Examine the structure of `voter_turnout_df2` using `str()`
-voter_turnout_df2 <- ___
-___
+voter_turnout_df2 <- read_excel("data/G04ResultsDetail2004-11-02.xls", sheet = "Voter Turnout", skip = 2, col_names = TRUE)
+str(voter_turnout_df2)
 
 ## Load the `DBI` library
-___
+library(DBI)
+
+
+
+
+
+
+
+
+
+
 
 ## Create a database connection to `data/tidynomicon/example.db` using the dbConnect() function
 ## The first argument is the database driver which in this case is `RSQLite::SQLite()`
