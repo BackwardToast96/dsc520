@@ -10,22 +10,22 @@ b<-5
 c<-a+b
 
 ## Subtract 6 from 22
-a<-22
-b<-6
-c<-a-b
+a <- 22
+b <-6
+c <- a-b
 
 ## Multiply 6 by 7
-a<-7
-b<-6
-c<-a*b
+a <- 7 
+b <- 6
+c <- a*b
 
 ## Add 4 to 6 and divide the result by 2
-a<-4
-b<-6
-c<-(a+b)/2)
+a <- 4
+b <- 6
+c <- (a+b)/2
 
 ## Compute 5 modulo 2
-a<-5%%2
+a <- 5%%2
 
 ## Assign the value 82 to the variable x
 ## Print x
