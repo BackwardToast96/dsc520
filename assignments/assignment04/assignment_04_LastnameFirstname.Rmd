@@ -12,6 +12,9 @@ bibliography: bibliography.bib
 # Markdown Basics
 
 ## Favorite Foods
+1. Pizza
+2. Crab
+3. Steak
 
 ## Images
 
