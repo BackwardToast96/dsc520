@@ -12,19 +12,27 @@ bibliography: bibliography.bib
 # Markdown Basics
 
 ## Favorite Foods
-1. Pizza
-2. Crab
-3. Steak
+- Pizza
+- Crab
+- Steak
 
 ## Images
 
+![picture of food]("pizzapizza.png")
+
 ## Add a Quote
+
+The happiness of your life depends upon the quality of your thoughts
 
 ## Add an Equation
 
+$$
+E = mc^2
+$$
+
 ## Add a Footnote
 
-This is a footnote
+Footnote for thought
 
 ## Add Citations
 
@@ -33,14 +41,29 @@ This is a footnote
 
 # Inline Code
 
+$d=m/v$
+
 ## NY Times COVID-19 Data
+data(covid_df, package='ggplot2')
+datatable(covid_df)
 
 ## R4DS Height vs Earnings
 
+datatable(hiteplote)
+
 # Tables
+tables used:
+- hiteplote
+- covid_df
 
 ## Knitr Table with Kable
 
+kable(head(covid_df))
+
 ## Pandoc Table
 
+pandoc.table(head(covid_df))
+
 # References
+
+References in bibliography.bib
