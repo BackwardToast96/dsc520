@@ -1,29 +1,33 @@
-# Assignment: ASSIGNMENT 6
-# Name: Lastname, Firstname
-# Date: 2010-02-14
+# Assignment: ASSIGNMENT 6.11
+# Name: Miranda, Alejandro
+# Date: 2023-01-12
+
 
 ## Set the working directory to the root of your DSC 520 directory
-setwd("/home/jdoe/Workspaces/dsc520")
+setwd("C:/Users/amiranda2/dsc520/data/")
 
 ## Load the `data/r4ds/heights.csv` to
-heights_df <- read.csv("data/r4ds/heights.csv")
+heights_df <- read.csv("r4ds/heights.csv")
 
 ## Load the ggplot2 library
 library(ggplot2)
 
 ## Fit a linear model using the `age` variable as the predictor and `earn` as the outcome
-age_lm <-  ___
+age_lm <-  lm(earn ~ age, data = heights_df)
 
 ## View the summary of your model using `summary()`
-___
+summary(age_lm)
 
 ## Creating predictions using `predict()`
-age_predict_df <- data.frame(earn = predict(___, ___), age=___)
+
+newage_test_df <- data.frame(age = c(17,19,25,32,59,61,68,75,84,98))
+age_predict_df <- data.frame(earn = predict(age_lm, newdata = newage_test_df ), age = newage_test_df)
+
 
 ## Plot the predictions against the original data
-ggplot(data = ___, aes(y = ___, x = ___)) +
+ggplot(data = heights_df, aes(y = earn, x = age)) +
   geom_point(color='blue') +
-  geom_line(color='red',data = ___, aes(y=___, x=___))
+  geom_line(color='red',data = age_predict_df, aes(y=earn, x=age))
 
 mean_earn <- mean(heights_df$earn)
 ## Corrected Sum of Squares Total
@@ -32,33 +36,37 @@ sst <- sum((mean_earn - heights_df$earn)^2)
 ssm <- sum((mean_earn - age_predict_df$earn)^2)
 ## Residuals
 residuals <- heights_df$earn - age_predict_df$earn
+
 ## Sum of Squares for Error
 sse <- sum(residuals^2)
 ## R Squared R^2 = SSM\SST
-r_squared <- ___
+r_squared <- (ssm / sst)
 
 ## Number of observations
-n <- ___
+n <- NROW(heights_df$earn)
 ## Number of regression parameters
 p <- 2
 ## Corrected Degrees of Freedom for Model (p-1)
-dfm <- ___
+dfm <- p - 1
 ## Degrees of Freedom for Error (n-p)
-dfe <- ___
+dfe <- n - p
 ## Corrected Degrees of Freedom Total:   DFT = n - 1
-dft <- ___
+dft <- n- 1
 
 ## Mean of Squares for Model:   MSM = SSM / DFM
-msm <- ___
+msm <- ssm / dfm
+
 ## Mean of Squares for Error:   MSE = SSE / DFE
-mse <- ___
+mse <- sse / dfe
 ## Mean of Squares Total:   MST = SST / DFT
-mst <- ___
+mst <- sst / dft
 ## F Statistic F = MSM/MSE
-f_score <- ___
+f_score <- msm / mse
 
 ## Adjusted R Squared R2 = 1 - (1 - R2)(n - 1) / (n - p)
-adjusted_r_squared <- ___
+adjusted_r_squared <- 1 - (((1 - r_squared)*(n - 1))/(n - p))
 
 ## Calculate the p-value from the F distribution
 p_value <- pf(f_score, dfm, dft, lower.tail=F)
+
+
